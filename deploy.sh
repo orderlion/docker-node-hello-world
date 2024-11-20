@@ -4,7 +4,7 @@ docker build -t hello-world .
 
 docker run -d \
   -l traefik.enable=true \
-  -l traefik.http.routers.hello-world.rule=PathPrefix\(\`/landing\`\) \ 
+  -l traefik.http.routers.hello-world.rule=PathPrefix\(\`/landing\`\) \
   -l traefik.http.routers.hello-world.tls=true \
   -l traefik.http.routers.hello-world.tls.certresolver=le \
   -l traefik.http.routers.hello-world.entrypoints=websecure \
