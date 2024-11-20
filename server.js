@@ -1,10 +1,11 @@
-var http = require('http')
+const http = require('http')
 
-var port = 4000
+const port = 4000
 
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain'})
-  response.end('Hello World\n')
+const server = http.createServer((req, res) => {
+  const host = req.headers.host;
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end(`Hello World!\nThe host you requested at is: ${host}`);
 })
 
 server.listen(port)
